@@ -20,6 +20,8 @@ int time;
 char keymap[1][2]= {{'1', '2'}};
 byte rowPins[1] ={11};
 byte colPins[2] = {13,12};
+int blinkCounter=0;
+
 
 /*
 byte colPins[1] ={11};
@@ -59,11 +61,9 @@ void setup()
     }
   }
 
-void blinkers(byte pin,int times){
+void blinkers(byte pin){
   for(int i=0; i<times; i++){
-    digitalWrite(pin,LOW);
-    delay(10);
-    digitalWrite(pin,HIGH);
+    digitalWrite(pin,!digitalRead(pin);
     delay(10);
   }
 }
